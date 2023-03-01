@@ -19,6 +19,15 @@ namespace LibraryManagement
             this.PhoneNumber = phoneNumber;
             this.Address = address;
         }
+        public bool Borrow(Library library, Book book)
+        {
+            return library.RemoveBook(book);
+        }
+
+        public bool Return(Library library, Book book)
+        {
+            return library.AddBook(book);
+        }
 
         public override string ToString()
         {

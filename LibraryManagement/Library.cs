@@ -33,7 +33,7 @@ namespace LibraryManagement
             this.Staffs = new List<Staff>();
             this.Members= new List<Member>();
             this.CurrentStaffCount= 0;
-            this.CurrrentMemberCount = 0;
+            this.CurrentBookCount = 0;
             this.CurrrentMemberCount = 0;
         }
         
@@ -42,61 +42,61 @@ namespace LibraryManagement
             if(this.CurrentBookCount < this.MaxBookCapacity)
             {
                 Books.Add(book);
+                this.CurrentBookCount++;
                 return true;
             }
             return false;
-
         }
         public bool RemoveBook(Book book) 
         {
-            if(this.CurrentBookCount > 0)
+            if(this.CurrentBookCount > 0 && this.Books.Contains(book))
             {
-                 Books.Remove(book);
+                Books.Remove(book);
+                this.CurrentBookCount--;
                 return true;
             }
             return false;
         }
-
         public bool AddStaff(Staff staff)
         {
             if(this.CurrentStaffCount < this.MaxStaffCapacity)
             {
                 Staffs.Add(staff);
+                this.CurrentStaffCount++;
                 return true;
             }
             return false;
         }
-
         public bool RemoveStaff(Staff staff) 
         {
-            if(this.Staffs.Count > 0) 
+            if(this.Staffs.Count > 0 && this.Staffs.Contains(staff)) 
             {
                 Staffs.Remove(staff);
+                this.CurrentStaffCount--;
                 return true;
             }
             return false;
         }
-
         public bool AddMember(Member member)
         {
             if(this.CurrrentMemberCount < this.MaxMemberCapacity) 
             {
                 Members.Add(member);
+                this.CurrrentMemberCount++;
                 return true;
             }
             return false;
         }
-
         public bool RemoveMember(Member member) 
         {
-            if(this.CurrrentMemberCount > 0)
+            if(this.CurrrentMemberCount > 0 && this.Members.Contains(member))
             {
                 Members.Remove(member); 
+                this.CurrrentMemberCount--;
                 return true;
             }
             return false;
         }
-
         public override string ToString()
         {
             return this.Name + '\n' + this.Address + '\n' + this.OpeningHours + '\n';

@@ -17,6 +17,11 @@ namespace LibraryManagement
             this.Email = email; 
             this.Position = position;
         }
+        
+        public void ArrangeBooks(Library library)
+        {
+            library.Books.Sort((b1, b2) => b1.Title.CompareTo(b2.Title));
+        }
 
         public override string ToString()
         {
