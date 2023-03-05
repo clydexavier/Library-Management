@@ -16,11 +16,11 @@ namespace LibraryManagement
         public string Address {get; private set;}
         public DateTime OpeningHours { get; private set;}
         private int MaxBookCapacity;
-        private int CurrentBookCount;
+        //private int CurrentBookCount;
         private int MaxStaffCapacity;
-        private int CurrentStaffCount;
+        //private int CurrentStaffCount;
         private int MaxMemberCapacity;
-        private int CurrrentMemberCount;
+        //private int CurrrentMemberCount;
         public Library(string name, string address, DateTime opening_hours, int max_book_capacity, int max_staff_capacity, int max_member_capacity) 
         {
             this.Name = name;    
@@ -32,37 +32,89 @@ namespace LibraryManagement
             this.Books= new List<Book>();
             this.Staffs = new List<Staff>();
             this.Members= new List<Member>();
-            this.CurrentStaffCount= 0;
-            this.CurrentBookCount = 0;
-            this.CurrrentMemberCount = 0;
         }
         
+        public bool BorrowBook(Book book, Member member, int number_of_days)
+        {
+            //you can borrow a book 1 - 7 days
+            //you must have <= 10 penalty points to borrow 
+            if (this.Members.Contains(member) && this.Books.Contains(book) && member.PenaltyPoints <= 10 && number_of_days >= 1 && number_of_days <= 7)
+            {
+                book.NumberOfDaysBorrowed = number_of_days;
+                book.Borrowed = DateTime.Now;
+                book.IsBorrowed = true;
+                this.RemoveBook(book);
+                return true;
+            }
+            return false;
+        }
+
+        public bool ReturnBook(Book book, Member member)
+        {
+            if(book.IsBorrowed && this.Members.Contains(member))
+            {
+                book.Returned = DateTime.Now;
+                if(book.Borrowed.AddDays(book.NumberOfDaysBorrowed) >= book.Returned) // returned on time
+                {
+                    Books.Add(book);
+                    book.IsBorrowed = false;
+                    book.Borrowed = default(DateTime);
+                    book.Returned = default(DateTime);
+                    book.NumberOfDaysBorrowed = 0;
+                    member.PenaltyPoints = (member.PenaltyPoints > 0) ? --member.PenaltyPoints : 0;
+                    return true;
+                }
+                else //returned late,  add penalty points equivalent to number of days late + 1
+                {
+                    TimeSpan interval = book.Returned.Subtract(book.Borrowed);
+                    int elapsed = (interval.Days);
+                    Books.Add(book);
+                    book.IsBorrowed = false;
+                    book.Borrowed = default(DateTime);
+                    book.Returned = default(DateTime);
+                    book.NumberOfDaysBorrowed = 0;
+
+                    member.PenaltyPoints += (elapsed + 1);
+                    if(member.PenaltyPoints >= 10) 
+                    {
+                        Members.Remove(member); //banned lol
+                    }
+                    return true;
+                } 
+            }
+            return false;
+        }
+
+        public void ArrangeBooks(Staff staff)
+        {
+            if(this.Staffs.Contains(staff) && this.Books.Count > 1) 
+            {
+                this.Books.Sort((b1, b2) => b1.Title.CompareTo(b2.Title));
+            }
+        }
         public bool AddBook(Book book)
         {
-            if(this.CurrentBookCount < this.MaxBookCapacity)
+            if(this.Books.Count < this.MaxBookCapacity)
             {
                 Books.Add(book);
-                this.CurrentBookCount++;
                 return true;
             }
             return false;
         }
         public bool RemoveBook(Book book) 
         {
-            if(this.CurrentBookCount > 0 && this.Books.Contains(book))
+            if(this.Books.Count > 0 && this.Books.Contains(book))
             {
                 Books.Remove(book);
-                this.CurrentBookCount--;
                 return true;
             }
             return false;
         }
         public bool AddStaff(Staff staff)
         {
-            if(this.CurrentStaffCount < this.MaxStaffCapacity)
+            if(this.Staffs.Count < this.MaxStaffCapacity)
             {
                 Staffs.Add(staff);
-                this.CurrentStaffCount++;
                 return true;
             }
             return false;
@@ -72,27 +124,24 @@ namespace LibraryManagement
             if(this.Staffs.Count > 0 && this.Staffs.Contains(staff)) 
             {
                 Staffs.Remove(staff);
-                this.CurrentStaffCount--;
                 return true;
             }
             return false;
         }
         public bool AddMember(Member member)
         {
-            if(this.CurrrentMemberCount < this.MaxMemberCapacity) 
+            if(this.Members.Count < this.MaxMemberCapacity) 
             {
                 Members.Add(member);
-                this.CurrrentMemberCount++;
                 return true;
             }
             return false;
         }
         public bool RemoveMember(Member member) 
         {
-            if(this.CurrrentMemberCount > 0 && this.Members.Contains(member))
+            if(this.Members.Count > 0 && this.Members.Contains(member))
             {
-                Members.Remove(member); 
-                this.CurrrentMemberCount--;
+                Members.Remove(member);
                 return true;
             }
             return false;

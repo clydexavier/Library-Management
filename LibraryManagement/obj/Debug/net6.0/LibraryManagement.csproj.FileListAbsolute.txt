@@ -13,3 +13,18 @@ D:\ACADS\2.2\C#\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\refint\
 D:\ACADS\2.2\C#\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.pdb
 D:\ACADS\2.2\C#\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.genruntimeconfig.cache
 D:\ACADS\2.2\C#\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\ref\LibraryManagement.dll
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\bin\Debug\net6.0\LibraryManagement.exe
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\bin\Debug\net6.0\LibraryManagement.deps.json
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\bin\Debug\net6.0\LibraryManagement.runtimeconfig.json
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\bin\Debug\net6.0\LibraryManagement.dll
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\bin\Debug\net6.0\LibraryManagement.pdb
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.csproj.AssemblyReference.cache
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.GeneratedMSBuildEditorConfig.editorconfig
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.AssemblyInfoInputs.cache
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.AssemblyInfo.cs
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.csproj.CoreCompileInputs.cache
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.dll
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\refint\LibraryManagement.dll
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.pdb
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\LibraryManagement.genruntimeconfig.cache
+D:\ACADS\BSCS-2\Second Sem\CSci 151 - Event Driven Programming\Lab\LibraryManagement\LibraryManagement\obj\Debug\net6.0\ref\LibraryManagement.dll

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ACADS\\2.2\\C#\\Lab\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
+      "projectUniqueName": "D:\\ACADS\\BSCS-2\\Second Sem\\CSci 151 - Event Driven Programming\\Lab\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
       "projectName": "LibraryManagement",
-      "projectPath": "D:\\ACADS\\2.2\\C#\\Lab\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
+      "projectPath": "D:\\ACADS\\BSCS-2\\Second Sem\\CSci 151 - Event Driven Programming\\Lab\\LibraryManagement\\LibraryManagement\\LibraryManagement.csproj",
       "packagesPath": "C:\\Users\\salar\\.nuget\\packages\\",
-      "outputPath": "D:\\ACADS\\2.2\\C#\\Lab\\LibraryManagement\\LibraryManagement\\obj\\",
+      "outputPath": "D:\\ACADS\\BSCS-2\\Second Sem\\CSci 151 - Event Driven Programming\\Lab\\LibraryManagement\\LibraryManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\salar\\AppData\\Roaming\\NuGet\\NuGet.Config",
